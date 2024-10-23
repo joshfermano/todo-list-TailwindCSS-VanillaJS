@@ -41,7 +41,9 @@ const addTodoItem = (todoText) => {
     'fa-solid fa-trash hover:scale-95 hover:text-red-700 duration-500 cursor-pointer';
   delBtn.addEventListener('click', () => {
     li.remove();
-    todoCount--;
+    if (todoCount > 0) {
+      todoCount--;
+    }
     updateCount();
     saveTodos();
   });
